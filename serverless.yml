@@ -1,0 +1,32 @@
+service: verifier-tasks
+app: verifier-app
+org: spott
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: prod
+  region: us-east-1
+  profile: spott
+
+functions:
+  blacklist69b:
+    handler: lib/update-blacklist-69b/aws-lambda-handler.handler
+    environment:
+      NODE_ENV: production
+    timeout: 60
+    memorySize: 1024
+    events:
+      - schedule:
+          rate: cron(0 6 * * ? *)
+          enabled: true
+  blacklist69:
+    handler: lib/update-all-blacklists-69/aws-lambda-handler.handler
+    environment:
+      NODE_ENV: production
+    timeout: 600
+    memorySize: 1024
+    events:
+      - schedule:
+          rate: cron(0 6 * * ? *)
+          enabled: true

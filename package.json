@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "name": "verifier-tasks",
+  "version": "1.0.0",
+  "description": "Recurrent jobs for Verifier.",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "yarn install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manuelmhtr/verifier-tasks.git"
+  },
+  "author": "Manuel de la Torre",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manuelmhtr/verifier-tasks/issues"
+  },
+  "homepage": "https://github.com/manuelmhtr/verifier-tasks#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "verifier-core": "git+ssh://git@github.com/manuelmhtr/verifier-core.git",
+    "verifier-database": "git+ssh://git@github.com/manuelmhtr/verifier-database.git"
+  }
+}
